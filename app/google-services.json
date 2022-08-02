@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "943726387439",
+    "project_id": "myrecycleapp-f1c49",
+    "storage_bucket": "myrecycleapp-f1c49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943726387439:android:4f896d87a5ee895f1dfb1a",
+        "android_client_info": {
+          "package_name": "com.carollim.myrecycleapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943726387439-uesuct2mohj5vf2kq3d1muva0hl46tq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu_5tWkrUrjs-2ZgqNczobPnUwGRcx--s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943726387439-uesuct2mohj5vf2kq3d1muva0hl46tq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">MYRecycle</string>
+
+    <!--Login-->
+    <string name="appName">MYRecycle</string>
+    <string name="loginText">Log in to continue</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="appLogo">App Logo</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="login">Login</string>
+    <string name="newUser">New User? REGISTER</string>
+
+    <!--Register-->
+    <string name="regText">Register to start recycling and earning</string>
+    <string name="fullName">Full Name</string>
+    <string name="email">Email</string>
+    <string name="phNum">Phone number</string>
+    <string name="submit">Submit</string>
+    <string name="existUser">Already have an account? LOGIN</string>
+
+    <!--Profile-->
+    <string name="profile">Profile</string>
+
+
+    <!--test-->
+    <string name="logout">Logout</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string-array name="my_reserve_date_array">
+        <item>29 May 22 - 4 June 22</item>
+        <item>22 May 22 - 28 May 22</item>
+        <item>15 May 22 - 21 May 22</item>
+    </string-array>
+
+    <string-array name="my_reserve_filter_array">
+        <item>Reserved</item>
+        <item>Collected</item>
+        <item>Cancelled</item>
+        <item>Accepted</item>
+    </string-array>
+
+    <string-array name="history_date_array">
+        <item>29 May 22 - 4 June 22</item>
+        <item>22 May 22 - 28 May 22</item>
+        <item>15 May 22 - 21 May 22</item>
+    </string-array>
+
+    <string-array name="category_array">
+        <item>Select Category</item>
+        <item>Aluminium</item>
+        <item>Cardboard</item>
+        <item>Egg Carton</item>
+        <item>Electronic</item>
+        <item>Glass</item>
+        <item>HDPE plastic</item>
+        <item>Mix Paper</item>
+        <item>Newspaper</item>
+        <item>PET Plastic</item>
+        <item>Tin Can</item>
+    </string-array>
+
+    <string-array name="history_filter_array">
+        <item>Category</item>
+        <item>Company</item>
+        <item>Date</item>
+        <item>Price</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="db">https://myrecycleapp-f1c49-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+    <string name="storage">gs://myrecycleapp-f1c49.appspot.com/</string>
+    <string-array name="userType">
+        <item>citizen</item>
+        <item>collector</item>
+    </string-array>
+
+</resources>

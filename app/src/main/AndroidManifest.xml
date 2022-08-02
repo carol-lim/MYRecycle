@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.carollim.myrecycleapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MYRecycleApp"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ReserveFormActivity"
+            android:exported="true"
+            android:label="Reservation Form"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".CollectionActivity"
+            android:exported="true"
+            android:label="Collection"
+            android:parentActivityName=".MyReserveDetailActivity" />
+        <activity
+            android:name=".ReservationActivity"
+            android:exported="true"
+            android:label="Reservation"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".HistoryDetailActivity"
+            android:exported="true"
+            android:label="History Detail"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MyReserveDetailActivity"
+            android:exported="true"
+            android:label="My Reserve Detail"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="true"
+            android:label="Change Password"
+            android:parentActivityName=".SettingActivity" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="true"
+            android:label="Setting"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="true"
+            android:label="Edit Profile"
+            android:parentActivityName=".SettingActivity" />
+        <activity
+            android:name=".CatalogDetailActivity"
+            android:exported="true"
+            android:label="Catalog Detail"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ReserveSelectTimeActivity"
+            android:exported="true"
+            android:label="Select a Time Slot"
+            android:parentActivityName=".ReserveSelectDateActivity" />
+        <activity
+            android:name=".ReserveSubmitActivity"
+            android:exported="true"
+            android:label="Confirm Reservation"
+            android:parentActivityName=".ReserveSelectTimeActivity" />
+        <activity
+            android:name=".ReserveSelectDateActivity"
+            android:exported="true"
+            android:label="Select a Date"
+            android:parentActivityName=".ReserveSelectCategoryActivity" />
+        <activity
+            android:name=".ReserveSelectCategoryActivity"
+            android:exported="true"
+            android:label="Select a Category"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="true"
+            android:label="Forgot Password"
+            android:parentActivityName=".LoginActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true"
+            android:label="Register"
+            android:parentActivityName=".SplashActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:label="Login"
+            android:parentActivityName=".SplashActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBXpSEWsM2ITFDirhvdeWUMqVAK03H2mdc" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.carollim.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+    </application>
+
+</manifest>
