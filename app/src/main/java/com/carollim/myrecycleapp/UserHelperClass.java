@@ -79,7 +79,7 @@ public class UserHelperClass {
     }
 
 
-    public UserHelperClass(String name, String email, String countryCode, String phNum, String address, String postalCode, String city, String state) {
+    public UserHelperClass(String name, String email, String countryCode, String phNum, String address, String postalCode, String city, String state, String userType) {
         this.name = name;
         this.email = email;
         this.countryCode = countryCode;
@@ -88,6 +88,7 @@ public class UserHelperClass {
         this.postalCode = postalCode;
         this.city = city;
         this.state = state;
+        this.userType = userType;
     }
 
 

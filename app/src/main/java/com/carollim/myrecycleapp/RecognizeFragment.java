@@ -22,7 +22,7 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
-import com.carollim.myrecycleapp.ml.Model;
+import com.carollim.myrecycleapp.ml.Model3;
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
@@ -71,7 +71,7 @@ public class RecognizeFragment extends Fragment {
 
     public void classifyImage(Bitmap image){
         try {
-            Model model = Model.newInstance(getContext());
+            Model3 model = Model3.newInstance(getContext());
 
             // Creates inputs for reference
             TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
@@ -94,7 +94,7 @@ public class RecognizeFragment extends Fragment {
             inputFeature0.loadBuffer(byteBuffer);
 
             // Runs model inference and gets result
-            Model.Outputs outputs = model.process(inputFeature0);
+            Model3.Outputs outputs = model.process(inputFeature0);
             TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
             float[] confidences = outputFeature0.getFloatArray();

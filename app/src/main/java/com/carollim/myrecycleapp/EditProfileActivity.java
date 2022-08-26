@@ -1,22 +1,19 @@
 package com.carollim.myrecycleapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -44,7 +41,8 @@ public class EditProfileActivity extends AppCompatActivity {
             address,
             postalCode,
             city,
-            state;
+            state,
+            userType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +92,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 }else if (!validateState()){
                     return;
                 } else{
-                    UserHelperClass helperClass = new UserHelperClass(name, email, countryCode, phoneNo, address, postalCode, city, state);
+                    UserHelperClass helperClass = new UserHelperClass(name, email, countryCode, phoneNo, address, postalCode, city, state, userType);
                     FirebaseDatabase database = FirebaseDatabase.getInstance(getResources().getString(R.string.db));
                     DatabaseReference refEditProfile = database.getReference("user");
 
@@ -141,6 +139,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     postalCode= userHelperClass.postalCode;
                     city= userHelperClass.city;
                     state= userHelperClass.state;
+                    userType= userHelperClass.userType;
 
                     fullNameEP.getEditText().setText(fullName);
                     emailEP.getEditText().setText(email);

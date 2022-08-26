@@ -64,6 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String city = regCity.getEditText().getText().toString();
                 String state = regState.getEditText().getText().toString();
                 String password = regPassword.getEditText().getText().toString();
+                String userType = "0";
 
                 if (!validateFullName()){
                     return;
@@ -95,7 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 firebaseUser.updateProfile(profileChangeRequest);*/
 
                                 // store user data into firebase realtime database
-                                UserHelperClass helperClass = new UserHelperClass(name, email, countryCode, phoneNo, address, postalCode, city, state);
+                                UserHelperClass helperClass = new UserHelperClass(name, email, countryCode, phoneNo, address, postalCode, city, state, userType);
 
                                 DatabaseReference refRegister = FirebaseDatabase.getInstance(getResources().getString(R.string.db)).getReference("user");
                                 refRegister.child(firebaseUser.getUid()).setValue(helperClass).addOnCompleteListener(new OnCompleteListener<Void>() {

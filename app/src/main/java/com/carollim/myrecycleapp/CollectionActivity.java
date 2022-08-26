@@ -42,7 +42,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class CollectionActivity extends AppCompatActivity {
+public class CollectionActivity extends AppCompatActivity /*implements PaymentResultListener*/ {
 
     TextView txtCollectionCategory;
     ImageView imageViewCollection;
@@ -104,11 +104,11 @@ public class CollectionActivity extends AppCompatActivity {
 
         switch (category){
             case "Aluminium":
-                kgPrice = 3.5;
+                kgPrice = 3.50;
                 break;
 
             case "Cardboard":
-                kgPrice = 0.4;
+                kgPrice = 0.40;
                 break;
 
             case "Egg Carton":
@@ -116,19 +116,19 @@ public class CollectionActivity extends AppCompatActivity {
                 break;
 
             case "Electronic":
-                kgPrice = 5.0;
+                kgPrice = 5.00;
                 break;
 
             case "Glass":
-                kgPrice = 0.1;
+                kgPrice = 0.10;
                 break;
 
             case "HDPE Plastic":
-                kgPrice = 0.8;
+                kgPrice = 0.80;
                 break;
 
             case "Mix Paper":
-                kgPrice = 0.2;
+                kgPrice = 0.20;
                 break;
 
             case "Newspaper":
@@ -136,7 +136,7 @@ public class CollectionActivity extends AppCompatActivity {
                 break;
 
             case "PET Plastic":
-                kgPrice = 0.6;
+                kgPrice = 0.60;
                 break;
 
             case "Tin Can":
@@ -202,8 +202,9 @@ public class CollectionActivity extends AppCompatActivity {
                                         unitPrice = kgPrice.toString();
 
                                         // store data to history node
-                                        History history = new History(rId, category, "Collected", date, time, addr, collector, user, price, unitPrice, weight, downloadedUrl, "TNG");
+                                        History history = new History(rId, category, "Collected", date, time, addr, collector, user, price, unitPrice, weight, downloadedUrl, "RazorPay");
                                         //saveChart01(history);
+
                                         saveHistory(history);
 
                                     }
@@ -261,7 +262,14 @@ public class CollectionActivity extends AppCompatActivity {
                     DatabaseReference ref2 = database.getReference("reservation");
                     ref2.child(rId).child("status").setValue("Collected");
 
-                    Toast.makeText(CollectionActivity.this, "Submitted successfully.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(CollectionActivity.this, "Submitted successfully.", Toast.LENGTH_SHORT).show();
+                    //Checkout.preload(getApplicationContext());
+/*                    Intent intent = new Intent(CollectionActivity.this, PaymentActivity.class);
+                    intent.putExtra("price", history.price);
+                    intent.putExtra("category", history.category);
+                    intent.putExtra("weight", history.weight);
+                    intent.putExtra("user", history.user);*/
+
                     Intent intent = new Intent(CollectionActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
@@ -443,6 +451,26 @@ public class CollectionActivity extends AppCompatActivity {
         currentPhotoPath = image.getAbsolutePath();
         return image; // the image File
     }
+
+
+
+/*
+    @Override
+    public void onPaymentSuccess(String s) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Payment ID");
+        builder.setMessage(s);
+        builder.show();
+
+
+    }
+
+    @Override
+    public void onPaymentError(int i, String s) {
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+    }
+*/
 
   /*  private void galleryAddPic() {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);

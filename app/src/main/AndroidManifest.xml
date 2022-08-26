@@ -18,11 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MYRecycleApp"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".ReserveFormActivity"
             android:exported="true"
             android:label="Reservation Form"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CollectionActivity"
             android:exported="true"
@@ -133,9 +134,8 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>
